@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MiracleBlog - 探索技术、设计与创意的交汇处</title>
+  <meta name="description" content="MiracleBlog - 探索技术、设计与创意的交汇处，分享前沿技术实践、设计方法论与AI趋势。">
+  <meta property="og:title" content="MiracleBlog">
+  <meta property="og:description" content="探索技术、设计与创意的交汇处">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "雷军武大演讲：脚踏实地才能走得更远",
+        "datePublished": "2026-04-03",
+        "description": "雷军回到母校武汉大学，在珞珈讲坛以校友身份分享了他对「梦想与现实」的理解。"
+      },
+      {
+        "@type": "Article",
+        "headline": "雷军：创业就是一场修行",
+        "datePublished": "2026-03-22",
+        "description": "雷军谈到创业十六年最大的感悟：「创业不是为了证明什么，而是你真的想改变点什么。」"
+      },
+      {
+        "@type": "Article",
+        "headline": "雷军谈小米汽车：为梦想窒息",
+        "datePublished": "2026-03-15",
+        "description": "小米SU7正式发布，雷军将这次创业称为「人生最后一次重大创业」。"
+      },
+      {
+        "@type": "Article",
+        "headline": "雷军的「顺势而为」哲学",
+        "datePublished": "2026-03-08",
+        "description": "雷军澄清「站在风口上」的重点不是「猪」，而是「风口」。选对方向比努力更重要。"
+      },
+      {
+        "@type": "Article",
+        "headline": "雷军：永远相信美好的事情即将发生",
+        "datePublished": "2026-03-01",
+        "description": "这是小米的品牌理念，也是雷军的人生信条。悲观者往往正确，但乐观者往往成功。"
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--warm-black);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { border: none; background: none; font-family: inherit; cursor: pointer; }
+
+    /* ── CSS Variables ─────────────────────────────── */
+    :root {
+      --black: #000;
+      --warm-black: #1d1d1f;
+      --dark: #2c2c2e;
+      --gray-900: #3a3a3c;
+      --gray-700: #636366;
+      --gray-500: #8e8e93;
+      --gray-300: #c7c7cc;
+      --gray-100: #f2f2f7;
+      --cream: #fbfbfd;
+      --white: #fefefe;
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --peach: #fce4d6;
+      --rose: #f9d1d1;
+      --lavender: #e0d8f0;
+      --sky: #d4e8f7;
+      --warm-beige: #f5f0eb;
+      --nav-height: 60px;
+      --section-full: 100vh;
+    }
+
+    /* ── Light Background ──────────────────────────── */
+    body {
+      background:
+        radial-gradient(1200px 600px at 50% 30%, rgba(255,255,255,.9), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, #f5f5f7 0%, #e8e8ed 50%, #f0eff5 100%) !important;
+      background-attachment: fixed;
+    }
+
+    /* ── Navigation ────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+    }
+    .nav.dark {
+      color: var(--white);
+    }
+    .nav.scrolled {
+      background: rgba(251,251,253,0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 0.5px solid rgba(0,0,0,0.04);
+      color: var(--warm-black);
+    }
+    .nav.scrolled .nav-logo,
+    .nav.scrolled .nav-links a { color: var(--warm-black); }
+    .nav.scrolled .nav-cta {
+      background: var(--warm-black);
+      color: var(--white);
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: inherit;
+      transition: opacity 0.3s;
+    }
+    .nav-logo:hover { opacity: 0.7; }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: inherit;
+      opacity: 0.75;
+      transition: opacity 0.3s;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { opacity: 1; font-weight: 500; }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.15);
+      color: inherit;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--accent); color: var(--white); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 搜索按钮 */
+    .nav-search-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.04);
+      transition: background 0.3s;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .nav-search-btn:hover { background: rgba(0,0,0,0.08); }
+    .nav-search-btn svg { width: 16px; height: 16px; stroke: var(--gray-700); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* 搜索展开框 */
+    .nav-search-wrap {
+      position: absolute;
+      top: var(--nav-height);
+      left: 0; right: 0;
+      background: rgba(251,251,253,0.95);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 40px;
+    }
+    .nav-search-wrap.open {
+      max-height: 80px;
+      padding: 16px 40px;
+    }
+    .nav-search-input {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: block;
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: var(--white);
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--warm-black);
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .nav-search-input::placeholder { color: var(--gray-500); }
+    .nav-search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.12);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-inner { padding: 0 20px; }
+      .nav-search-wrap { padding: 0 20px; }
+      .nav-search-wrap.open { padding: 12px 20px; }
+    }
+
+    /* ── Hero ───────────────────────────────────────── */
+    .hero {
+      height: var(--section-full);
+      background:
+        radial-gradient(1200px 600px at 50% 30%, rgba(255,255,255,.92), rgba(255,255,255,0) 55%),
+        radial-gradient(900px 500px at 25% 60%, rgba(172,219,237,.45), transparent 60%),
+        radial-gradient(900px 500px at 75% 55%, rgba(182,224,240,.4), transparent 60%),
+        radial-gradient(700px 400px at 50% 80%, rgba(234,242,245,.5), transparent 55%),
+        linear-gradient(170deg, #ffffff 0%, #e8f4fa 35%, #d4eaf3 65%, #f0f6f9 100%);
+      color: var(--warm-black);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 1000px; height: 1000px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(172,219,237,.2) 0%, transparent 60%);
+      top: -30%; right: -20%;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 160px;
+      background: linear-gradient(transparent, rgba(255,255,255,0.6));
+      pointer-events: none;
+    }
+
+    /* 动态径向渐变背景 */
+    .hero-bg-anim {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(800px 800px at 20% 50%, rgba(172,219,237,.18), transparent 70%),
+        radial-gradient(600px 600px at 80% 40%, rgba(224,216,240,.15), transparent 70%),
+        radial-gradient(500px 500px at 50% 80%, rgba(252,228,214,.12), transparent 70%);
+      background-size: 200% 200%;
+      animation: heroBgShift 15s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes heroBgShift {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 50% 0%; }
+      50% { background-position: 100% 50%; }
+      75% { background-position: 50% 100%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero > * { position: relative; z-index: 1; }
+
+    .hero-overline {
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: heroFade 1s 0.2s forwards;
+    }
+    .hero h1 {
+      font-size: clamp(56px, 10vw, 120px);
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+      color: var(--warm-black);
+      opacity: 0;
+      animation: heroFade 1s 0.4s forwards;
+    }
+    .hero h1 span {
+      display: block;
+      font-weight: 300;
+      font-size: clamp(20px, 3vw, 32px);
+      letter-spacing: 0.08em;
+      color: var(--gray-700);
+      margin-top: 20px;
+    }
+
+    /* ── iPhone Timer ────────────────────────────── */
+    .timer-widget {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      animation: heroFade 1s 0.8s forwards;
+      user-select: none;
+    }
+    .timer-label-beijing {
+      font-size: 12px;
+      color: var(--gray-500);
+      letter-spacing: 0.08em;
+      font-weight: 400;
+    }
+    .timer-digits {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .timer-group {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .timer-digit-container {
+      width: clamp(42px, 6vw, 64px);
+      height: clamp(56px, 8vw, 84px);
+      background: rgba(172,219,237,.15);
+      border: 1px solid rgba(172,219,237,.25);
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .timer-digit-container::before,
+    .timer-digit-container::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 35%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .timer-digit-container::before {
+      top: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+    }
+    .timer-digit-container::after {
+      bottom: 0;
+      background: linear-gradient(to top, rgba(255,255,255,0.8), transparent);
+    }
+    .timer-digit-strip {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .timer-digit-strip .digit {
+      width: clamp(42px, 6vw, 64px);
+      height: clamp(56px, 8vw, 84px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(28px, 4.5vw, 44px);
+      font-weight: 700;
+      color: var(--warm-black);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+    .timer-separator {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 300;
+      color: var(--gray-500);
+      margin: 0 2px;
+      line-height: 1;
+      align-self: center;
+      animation: timerBlink 1s ease-in-out infinite;
+    }
+    @keyframes timerBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .timer-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-top: 10px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: heroFade 1s 1s forwards;
+    }
+    .hero-scroll span {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--gray-500);
+      text-transform: uppercase;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(var(--gray-500), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes heroFade {
+      to { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* ── Scroll reveal ─────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── Section: Featured ─────────────────────────── */
+    .section-featured {
+      background: linear-gradient(180deg, #2c2c2e 0%, #1d1d1f 100%);
+      color: var(--white);
+      padding: 100px 0 120px;
+      overflow: hidden;
+    }
+    .section-featured .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .section-featured .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+    .section-featured .section-overline {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 8px;
+    }
+    .section-featured h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+    .section-featured .section-link {
+      font-size: 14px;
+      color: var(--gray-500);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s, gap 0.3s;
+      white-space: nowrap;
+    }
+    .section-featured .section-link:hover {
+      color: var(--white);
+      gap: 10px;
+    }
+
+    .featured-rail {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .featured-rail::-webkit-scrollbar { display: none; }
+
+    .featured-card {
+      flex: 0 0 calc(50% - 8px);
+      min-width: 340px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: start;
+      background: #2c2c2e;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .featured-card:first-child {
+      flex: 0 0 calc(66% - 8px);
+    }
+    .featured-card-cover {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .featured-card-cover img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .featured-card:hover .featured-card-cover img {
+      transform: scale(1.05);
+    }
+    .featured-card-body {
+      padding: 24px 28px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .featured-card-tag {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+    .featured-card-title {
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+    .featured-card-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+    .featured-card-arrow {
+      margin-top: 12px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .featured-card:hover .featured-card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .featured-card-arrow svg { width: 14px; height: 14px; }
+
+    @media (max-width: 768px) {
+      .featured-card { flex: 0 0 85%; min-width: 280px; }
+      .featured-card:first-child { flex: 0 0 85%; }
+      .section-featured .container { padding: 0 20px; }
+    }
+
+    /* ── Section: Articles ─────────────────────────── */
+    .section-articles {
+      padding: 120px 0;
+      position: relative;
+    }
+    .section-articles::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(252,228,214,0.4) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .section-articles .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .section-articles .section-head {
+      margin-bottom: 56px;
+    }
+    .section-articles .section-overline {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 8px;
+    }
+    .section-articles h2 {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    /* 面包屑 */
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .breadcrumb a {
+      color: var(--gray-500);
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb .sep { margin: 0 8px; opacity: 0.5; }
+
+    .article-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .article-item {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 40px;
+      align-items: center;
+      padding: 36px 0;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+    }
+    .article-item:first-child { border-top: none; }
+    .article-item:hover { background: rgba(0,113,227,0.04); margin: 0 -20px; padding: 36px 20px; border-radius: 12px; border-top-color: transparent; }
+    .article-item:hover + .article-item { border-top-color: transparent; }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .article-date {
+      font-size: 13px;
+      color: var(--gray-500);
+      font-weight: 400;
+    }
+    .article-tag {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: rgba(0,113,227,0.06);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .article-title {
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+    }
+    .article-item:hover .article-title { color: var(--accent); }
+    .article-excerpt {
+      font-size: 14px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+    .article-thumb {
+      width: 200px;
+      height: 132px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .article-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .article-item:hover .article-thumb img { transform: scale(1.08); }
+
+    @media (max-width: 768px) {
+      .article-item { grid-template-columns: 1fr; gap: 16px; }
+      .article-thumb { width: 100%; height: 200px; }
+      .section-articles .container { padding: 0 20px; }
+    }
+
+    /* ── Section: Quote ────────────────────────────── */
+    .section-quote {
+      padding: 120px 40px;
+      background: linear-gradient(160deg, #1d1d1f 0%, #2c2c2e 60%, #3a3a3c 100%);
+      color: var(--white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-quote::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(249,209,209,0.08) 0%, transparent 70%);
+      top: 10%; left: 10%;
+      pointer-events: none;
+    }
+    .section-quote::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,216,240,0.06) 0%, transparent 70%);
+      bottom: 10%; right: 10%;
+      pointer-events: none;
+    }
+    .section-quote blockquote {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.3;
+      position: relative;
+      z-index: 1;
+    }
+    .section-quote cite {
+      display: block;
+      margin-top: 28px;
+      font-size: 14px;
+      font-style: normal;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Section: Categories ───────────────────────── */
+    .section-categories {
+      padding: 120px 0;
+      background: transparent;
+      position: relative;
+    }
+    .section-categories::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,232,247,0.3) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .section-categories::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -150px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(252,228,214,0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .section-categories .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .section-categories h2 {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 56px;
+    }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .category-card {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+      border-color: rgba(0,113,227,0.08);
+      background: rgba(255,255,255,0.8);
+    }
+    .category-card:active {
+      transform: translateY(-1px) scale(0.99);
+    }
+    .category-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
+    .category-icon svg {
+      width: 24px; height: 24px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .category-card:nth-child(1) .category-icon { background: rgba(0,113,227,0.08); }
+    .category-card:nth-child(2) .category-icon { background: rgba(255,149,0,0.08); }
+    .category-card:nth-child(3) .category-icon { background: rgba(88,86,214,0.08); }
+    .category-card:nth-child(4) .category-icon { background: rgba(52,199,89,0.08); }
+    .category-card:nth-child(5) .category-icon { background: rgba(255,59,48,0.08); }
+    .category-card:nth-child(6) .category-icon { background: rgba(175,82,222,0.08); }
+    .category-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .category-card p {
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    .category-count {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .categories-grid { grid-template-columns: 1fr; }
+      .section-categories .container { padding: 0 20px; }
+    }
+
+    /* ── Section: Newsletter ────────────────────────── */
+    .section-newsletter {
+      padding: 120px 40px;
+      background: linear-gradient(160deg, #1d1d1f 0%, #2c2c2e 100%);
+      color: var(--white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-newsletter::before {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,113,227,0.05) 0%, transparent 60%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .section-newsletter .inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .section-newsletter h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+    .section-newsletter p {
+      font-size: 15px;
+      color: var(--gray-500);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--white);
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .newsletter-form input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+    }
+    .newsletter-form button {
+      padding: 14px 28px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+    .newsletter-form button:hover {
+      background: var(--accent-hover);
+      transform: scale(1.03);
+    }
+    .newsletter-form button:active { transform: scale(0.97); }
+
+    .newsletter-hint {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.02em;
+    }
+
+    /* RSS 订阅链接 */
+    .rss-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      cursor: default;
+      opacity: 0.5;
+    }
+    .rss-link svg {
+      width: 14px; height: 14px;
+      fill: #f2870c;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .newsletter-form { flex-direction: column; }
+    }
+
+    /* ── Footer ────────────────────────────────────── */
+    .footer {
+      padding: 48px 40px 32px;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(0,0,0,0.04);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--warm-black);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: var(--gray-700);
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--warm-black); }
+    .footer-col a.disabled-link {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      font-size: 12px;
+      color: var(--gray-500);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-bottom a { color: var(--gray-500); transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--warm-black); }
+    .footer-bottom a.disabled-link {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .footer { padding: 32px 20px 24px; }
+      .footer-inner { flex-direction: column; gap: 24px; }
+    }
+
+    /* ── Progress bar ──────────────────────────────── */
+    .progress-bar {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      height: 2px;
+      background: var(--accent);
+      z-index: 999;
+      width: 0%;
+      transition: width 0.08s linear;
+    }
+
+    /* ── Back to top ───────────────────────────────── */
+    .back-to-top {
+      position: fixed;
+      bottom: 32px; right: 32px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--warm-black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 998;
+      cursor: pointer;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: var(--accent); transform: translateY(-2px); }
+    .back-to-top:active { transform: scale(0.9); }
+    .back-to-top svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* ── Lazy image ────────────────────────────────── */
+    .lazy-img {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .lazy-img.loaded { opacity: 1; }
+
+    /* ── Article Modal ─────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(29,29,31,0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+    .modal-overlay.active { opacity: 1; pointer-events: all; }
+    .modal-card {
+      background: var(--cream);
+      border-radius: 20px;
+      max-width: 640px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 48px;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+    }
+    .modal-overlay.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--gray-700);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .modal-close:hover { background: rgba(0,0,0,0.1); color: var(--warm-black); transform: rotate(90deg); }
+    .modal-tag {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      background: rgba(0,113,227,0.06);
+      padding: 4px 12px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .modal-card h2 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .modal-card .modal-date {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+    }
+    .modal-card .modal-body {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--gray-700);
+    }
+    .modal-card .modal-body p { margin-bottom: 16px; }
+
+    /* ── Nav mobile menu ───────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      width: 32px; height: 32px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 18px; height: 1.5px;
+      background: currentColor;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .nav-hamburger span::before,
+    .nav-hamburger span::after {
+      content: '';
+      position: absolute;
+      width: 18px; height: 1.5px;
+      background: currentColor;
+      left: 0;
+      transition: all 0.3s;
+    }
+    .nav-hamburger span::before { top: -6px; }
+    .nav-hamburger span::after { top: 6px; }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+    }
+
+    /* ── Smooth section divider ────────────────────── */
+    .section-divider {
+      height: 1px;
+      background: rgba(0,0,0,0.04);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── Toast ─────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(29,29,31,0.88);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 3000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s, transform 0.35s;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── 浮动心形按钮 ─────────────────────────────── */
+    .float-love-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 88px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,117,140,0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 998;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid rgba(255,117,140,0.2);
+    }
+    .float-love-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #ff758c;
+      transition: transform 0.35s;
+    }
+    .float-love-btn:hover {
+      transform: scale(1.15);
+      background: rgba(255,117,140,0.25);
+      box-shadow: 0 8px 24px rgba(255,117,140,0.2);
+    }
+    .float-love-btn:hover svg {
+      transform: scale(1.1);
+      animation: heartBeat 0.6s ease-in-out;
+    }
+    @keyframes heartBeat {
+      0% { transform: scale(1.1); }
+      25% { transform: scale(1.25); }
+      50% { transform: scale(1.1); }
+      75% { transform: scale(1.2); }
+      100% { transform: scale(1.1); }
+    }
+
+    /* ── Auth Buttons (Nav) ─────────────────────── */
+    .nav-auth {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-login-btn {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--gray-300);
+      background: transparent;
+      color: var(--warm-black);
+      cursor: pointer;
+      transition: all 0.3s;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .nav-login-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .nav-register-btn {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: none;
+      background: var(--accent);
+      color: var(--white);
+      cursor: pointer;
+      transition: all 0.3s;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .nav-register-btn:hover {
+      background: var(--accent-hover);
+      filter: brightness(1.08);
+    }
+    @media (max-width: 768px) {
+      .nav-auth { display: none; }
+    }
+
+    /* ── User Avatar / Dropdown ─────────────────── */
+    .nav-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      cursor: pointer;
+    }
+    .nav-user-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .nav-user-name {
+      font-size: 13px;
+      font-weight: 500;
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .nav-user-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: 220px;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04);
+      padding: 6px 0;
+      opacity: 0;
+      transform: translateY(-8px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      z-index: 1100;
+    }
+    .nav-user-dropdown.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: all;
+    }
+    .nav-user-dropdown .dd-email {
+      padding: 10px 16px;
+      font-size: 12px;
+      color: var(--gray-500);
+      cursor: default;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .nav-user-dropdown .dd-sep {
+      height: 1px;
+      background: rgba(0,0,0,0.06);
+      margin: 4px 0;
+    }
+    .nav-user-dropdown .dd-item {
+      display: block;
+      padding: 10px 16px;
+      font-size: 13px;
+      color: var(--warm-black);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+    }
+    .nav-user-dropdown .dd-item:hover {
+      background: rgba(0,0,0,0.04);
+    }
+    .nav-user-dropdown .dd-item.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .nav-user-dropdown .dd-item.danger {
+      color: #ef4444;
+    }
+    .nav-user-dropdown .dd-item.danger:hover {
+      background: rgba(239,68,68,0.06);
+    }
+    @media (max-width: 768px) {
+      .nav-user { display: none; }
+    }
+
+    /* ── Auth Modal ─────────────────────────────── */
+    .auth-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 2500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .auth-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .auth-card {
+      background: var(--white);
+      border-radius: 16px;
+      max-width: 420px;
+      width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 36px 32px 32px;
+      transform: translateY(-20px);
+      transition: transform 0.3s ease-out;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+      position: relative;
+    }
+    .auth-overlay.active .auth-card {
+      transform: translateY(0);
+    }
+    .auth-card-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: var(--gray-700);
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s;
+      font-family: inherit;
+    }
+    .auth-card-close:hover {
+      background: rgba(0,0,0,0.1);
+      color: var(--warm-black);
+      transform: rotate(90deg);
+    }
+    .auth-card h2 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .auth-card .auth-subtitle {
+      font-size: 14px;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+    }
+    .auth-field {
+      margin-bottom: 18px;
+    }
+    .auth-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 6px;
+    }
+    .auth-field-wrap {
+      position: relative;
+    }
+    .auth-field input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--gray-300);
+      background: var(--gray-100);
+      color: var(--warm-black);
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .auth-field input::placeholder {
+      color: var(--gray-500);
+    }
+    .auth-field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.12);
+    }
+    .auth-field input.error {
+      border-color: #ef4444;
+    }
+    .auth-field input.success {
+      border-color: #22c55e;
+    }
+    .auth-field .field-error {
+      font-size: 12px;
+      color: #ef4444;
+      margin-top: 5px;
+      display: none;
+    }
+    .auth-field .field-error.show {
+      display: block;
+    }
+    .auth-pw-toggle {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px; height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--gray-500);
+      font-size: 16px;
+      transition: color 0.2s;
+      border-radius: 50%;
+    }
+    .auth-pw-toggle:hover { color: var(--warm-black); }
+    .auth-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .auth-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--gray-700);
+      cursor: pointer;
+    }
+    .auth-checkbox input[type="checkbox"] {
+      width: 16px; height: 16px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .auth-link {
+      font-size: 13px;
+      color: var(--gray-500);
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    .auth-submit {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    .auth-submit:hover {
+      background: var(--accent-hover);
+      filter: brightness(1.05);
+    }
+    .auth-submit:active {
+      transform: scale(0.98);
+    }
+    .auth-error-bar {
+      background: rgba(239,68,68,0.1);
+      color: #ef4444;
+      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: none;
+      text-align: center;
+    }
+    .auth-error-bar.show { display: block; }
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0 16px;
+      color: var(--gray-500);
+      font-size: 13px;
+    }
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(0,0,0,0.08);
+    }
+    .auth-third-party {
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+    .auth-switch {
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-700);
+      margin-top: 20px;
+    }
+    .auth-switch a {
+      color: var(--accent);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .auth-switch a:hover { text-decoration: underline; }
+
+    /* Mobile modal adjustments */
+    @media (max-width: 768px) {
+      .auth-card {
+        width: 95vw;
+        max-width: none;
+        padding: 28px 20px 24px;
+        border-radius: 16px 16px 0 0;
+        max-height: 92vh;
+        margin-top: auto;
+      }
+      .auth-overlay {
+        align-items: flex-end;
+      }
+      .auth-overlay.active .auth-card {
+        transform: translateY(0);
+        animation: modalSlideUp 0.3s ease-out;
+      }
+      @keyframes modalSlideUp {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .auth-card {
+        max-width: 480px;
+      }
+    }
+
+    /* ── Mobile Menu ──────────────────────────────── */
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: rgba(251,251,253,0.98);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 0.5px solid rgba(0,0,0,0.04);
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      z-index: 999;
+    }
+    .nav-mobile-menu.open {
+      max-height: 400px;
+      padding: 16px 0;
+    }
+    .nav-mobile-links {
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-link {
+      display: block;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--warm-black);
+      border-bottom: 0.5px solid rgba(0,0,0,0.04);
+      transition: background 0.2s;
+    }
+    .mobile-link:hover {
+      background: rgba(0,0,0,0.03);
+    }
+    .nav-mobile-auth {
+      display: flex;
+      gap: 12px;
+      padding: 16px 24px;
+    }
+    .mobile-auth-btn {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+    .mobile-login-btn {
+      background: transparent;
+      border: 1px solid var(--gray-300);
+      color: var(--warm-black);
+    }
+    .mobile-login-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .mobile-register-btn {
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: var(--white);
+    }
+    .mobile-register-btn:hover {
+      background: var(--accent-hover);
+      filter: brightness(1.08);
+    }
+    .nav-mobile-user {
+      padding: 16px 24px;
+    }
+    .mobile-user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .mobile-user-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .mobile-user-details {
+      overflow: hidden;
+    }
+    .mobile-user-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--warm-black);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mobile-user-email {
+      font-size: 13px;
+      color: var(--gray-500);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mobile-user-actions {
+      display: flex;
+      flex-direction: column;
+      border-top: 0.5px solid rgba(0,0,0,0.06);
+      padding-top: 12px;
+    }
+    .mobile-action-btn {
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: left;
+      border: none;
+      background: none;
+      color: var(--warm-black);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+    .mobile-action-btn:hover {
+      background: rgba(0,0,0,0.04);
+    }
+    .mobile-action-btn.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .mobile-action-btn.danger {
+      color: #ef4444;
+    }
+    .mobile-action-btn.danger:hover {
+      background: rgba(239,68,68,0.06);
+    }
+    @media (max-width: 768px) {
+      .nav-mobile-menu {
+        display: block;
+      }
+      .nav-actions .nav-auth,
+      .nav-actions .nav-user {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">MiracleBlog.</a>
+      <div class="nav-links">
+        <a href="#featured">精选</a>
+        <a href="#articles">文章</a>
+        <a href="#categories">分类</a>
+        <a href="#subscribe">订阅</a>
+      </div>
+      <div class="nav-actions">
+        <div class="nav-search-btn" id="searchToggle" title="搜索">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <!-- 桌面端登录/注册按钮 -->
+        <div class="nav-auth" id="navAuth">
+          <button class="nav-login-btn" id="navLoginBtn" onclick="openLoginModal()">登录</button>
+          <button class="nav-register-btn" id="navRegisterBtn" onclick="openRegisterModal()">注册</button>
+        </div>
+        <!-- 桌面端用户头像/下拉菜单（默认隐藏） -->
+        <div class="nav-user" id="navUser" style="display:none;" onclick="toggleUserDropdown(event)">
+          <div class="nav-user-avatar" id="userAvatar">U</div>
+          <div class="nav-user-name" id="userName">用户名</div>
+          <div class="nav-user-dropdown" id="userDropdown">
+            <div class="dd-email" id="ddEmail">user@email.com</div>
+            <div class="dd-sep"></div>
+            <button class="dd-item disabled" onclick="event.stopPropagation();">我的文章</button>
+            <button class="dd-item disabled" onclick="event.stopPropagation();">个人设置</button>
+            <div class="dd-sep"></div>
+            <button class="dd-item danger" onclick="event.stopPropagation();logout()">退出登录</button>
+          </div>
+        </div>
+        <a href="#subscribe" class="nav-cta">订阅通讯</a>
+      </div>
+      <div class="nav-hamburger" id="hamburgerBtn"><span></span></div>
+    </div>
+    <!-- 搜索展开框 -->
+    <div class="nav-search-wrap" id="searchWrap">
+      <input type="text" class="nav-search-input" id="searchInput" placeholder="搜索文章标题或描述...">
+    </div>
+    <!-- 移动端菜单 -->
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <div class="nav-mobile-links">
+        <a href="#featured" class="mobile-link">精选</a>
+        <a href="#articles" class="mobile-link">文章</a>
+        <a href="#categories" class="mobile-link">分类</a>
+        <a href="#subscribe" class="mobile-link">订阅</a>
+      </div>
+      <div class="nav-mobile-auth" id="mobileAuth">
+        <button class="mobile-auth-btn mobile-login-btn" onclick="closeMobileMenu();openLoginModal();">登录</button>
+        <button class="mobile-auth-btn mobile-register-btn" onclick="closeMobileMenu();openRegisterModal();">注册</button>
+      </div>
+      <div class="nav-mobile-user" id="mobileUser" style="display:none;">
+        <div class="mobile-user-info">
+          <div class="mobile-user-avatar" id="mobileUserAvatar">U</div>
+          <div class="mobile-user-details">
+            <div class="mobile-user-name" id="mobileUserName">用户名</div>
+            <div class="mobile-user-email" id="mobileUserEmail">user@email.com</div>
+          </div>
+        </div>
+        <div class="mobile-user-actions">
+          <button class="mobile-action-btn disabled" disabled>我的文章</button>
+          <button class="mobile-action-btn disabled" disabled>个人设置</button>
+          <button class="mobile-action-btn danger" onclick="closeMobileMenu();logout();">退出登录</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-bg-anim"></div>
+    <div class="hero-overline">Welcome to My World</div>
+    <h1>
+      用代码书写思想
+      <span>探索技术、设计与创意的交汇处</span>
+    </h1>
+    <!-- Timer -->
+    <div class="timer-widget">
+      <div class="timer-label-beijing">北京时间</div>
+      <div class="timer-digits">
+        <div class="timer-group" id="timerHours">
+          <div class="timer-digit-container"><div class="timer-digit-strip" data-digit="h1"><div class="digit">0</div></div></div>
+          <div class="timer-digit-container"><div class="timer-digit-strip" data-digit="h2"><div class="digit">0</div></div></div>
+        </div>
+        <span class="timer-separator">:</span>
+        <div class="timer-group" id="timerMinutes">
+          <div class="timer-digit-container"><div class="timer-digit-strip" data-digit="m1"><div class="digit">0</div></div></div>
+          <div class="timer-digit-container"><div class="timer-digit-strip" data-digit="m2"><div class="digit">0</div></div></div>
+        </div>
+        <span class="timer-separator">:</span>
+        <div class="timer-group" id="timerSeconds">
+          <div class="timer-digit-container"><div class="timer-digit-strip" data-digit="s1"><div class="digit">0</div></div></div>
+          <div class="timer-digit-container"><div class="timer-digit-strip" data-digit="s2"><div class="digit">0</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="section-featured" id="featured">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-overline">Featured</div>
+          <h2>精选文章</h2>
+        </div>
+        <a href="#articles" class="section-link">
+          查看全部
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="featured-rail">
+        <!-- Featured Card 1: 产品哲学 -->
+        <div class="featured-card reveal reveal-delay-1" onclick="handleCardClick(event, 'article-6.html')">
+          <div class="featured-card-cover">
+            <img src="https://picsum.photos/seed/miracle1/400/240" alt="产品哲学" class="lazy-img" loading="lazy">
+          </div>
+          <div class="featured-card-body">
+            <div class="featured-card-tag">产品哲学</div>
+            <div class="featured-card-title">雷军的产品哲学：极致不是完美，是不妥协</div>
+            <div class="featured-card-desc">小米每一款产品背后，都藏着雷军对「极致」二字的理解——不是做到最好，而是在每一个细节上都不将就。</div>
+            <div class="featured-card-arrow">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Featured Card 2: 团队管理 -->
+        <div class="featured-card reveal reveal-delay-2" onclick="handleCardClick(event, 'article-7.html')">
+          <div class="featured-card-cover">
+            <img src="https://picsum.photos/seed/miracle2/400/240" alt="团队管理" class="lazy-img" loading="lazy">
+          </div>
+          <div class="featured-card-body">
+            <div class="featured-card-tag">团队管理</div>
+            <div class="featured-card-title">雷军谈团队：找到比你更厉害的人，然后放手</div>
+            <div class="featured-card-desc">从金山到小米，雷军的管理哲学始终如一——招最好的人，给最大的信任，让他们做出超越你预期的事。</div>
+            <div class="featured-card-arrow">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Featured Card 3: 用户思维 -->
+        <div class="featured-card reveal reveal-delay-3" onclick="handleCardClick(event, 'article-8.html')">
+          <div class="featured-card-cover">
+            <img src="https://picsum.photos/seed/miracle3/400/240" alt="用户思维" class="lazy-img" loading="lazy">
+          </div>
+          <div class="featured-card-body">
+            <div class="featured-card-tag">用户思维</div>
+            <div class="featured-card-title">雷军的用户思维：把「米粉」变成「共创者」</div>
+            <div class="featured-card-desc">小米社区不只是一个论坛，而是一个让用户参与产品定义的平台。雷军说：「用户比我们更懂用户。」</div>
+            <div class="featured-card-arrow">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="section-articles" id="articles">
+    <div class="container">
+      <!-- 面包屑 -->
+      <div class="breadcrumb reveal">
+        <a href="#top">首页</a><span class="sep">/</span><span>文章</span>
+      </div>
+      <div class="section-head reveal">
+        <div class="section-overline">Latest</div>
+        <h2>最新文章</h2>
+      </div>
+      <div class="article-list">
+        <div class="article-item reveal reveal-delay-1" onclick="handleCardClick(event, 'article-1.html')">
+          <div>
+            <div class="article-meta">
+              <span class="article-date">2026.04.03</span>
+              <span class="article-tag">演讲</span>
+            </div>
+            <div class="article-title">雷军武大演讲：脚踏实地才能走得更远</div>
+            <div class="article-excerpt">雷军回到母校武汉大学，在珞珈讲坛以校友身份分享了他对「梦想与现实」的理解。他鼓励学弟学妹：「年轻时最大的资本就是试错成本低，不要怕失败，要怕的是没有全力以赴。」</div>
+          </div>
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop&auto=format&q=80" alt="" class="lazy-img" loading="lazy">
+          </div>
+        </div>
+
+        <div class="article-item reveal reveal-delay-2" onclick="handleCardClick(event, 'article-2.html')">
+          <div>
+            <div class="article-meta">
+              <span class="article-date">2026.03.22</span>
+              <span class="article-tag">创业</span>
+            </div>
+            <div class="article-title">雷军：创业就是一场修行</div>
+            <div class="article-excerpt">在一次访谈中，雷军谈到创业十六年最大的感悟：「创业不是为了证明什么，而是你真的想改变点什么。」小米不是在做「性价比」，而是在做「感动人心、价格厚道」。</div>
+          </div>
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop&auto=format&q=80" alt="" class="lazy-img" loading="lazy">
+          </div>
+        </div>
+        <div class="article-item reveal reveal-delay-3" onclick="handleCardClick(event, 'article-3.html')">
+          <div>
+            <div class="article-meta">
+              <span class="article-date">2026.03.15</span>
+              <span class="article-tag">行业</span>
+            </div>
+            <div class="article-title">雷军谈小米汽车：为梦想窒息</div>
+            <div class="article-excerpt">2024年小米SU7正式发布，雷军将这次创业称为「人生最后一次重大创业」。小米用三年时间走完了传统车企五到七年的路，跨界不是「降维打击」，而是对新行业保持敬畏。</div>
+          </div>
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400&h=300&fit=crop&auto=format&q=80" alt="" class="lazy-img" loading="lazy">
+          </div>
+        </div>
+        <div class="article-item reveal reveal-delay-4" onclick="handleCardClick(event, 'article-4.html')">
+          <div>
+            <div class="article-meta">
+              <span class="article-date">2026.03.08</span>
+              <span class="article-tag">思考</span>
+            </div>
+            <div class="article-title">雷军的「顺势而为」哲学</div>
+            <div class="article-excerpt">雷军最广为人知的一句话是「站在风口上，猪都能飞起来」。他澄清：重点不是「猪」，而是「风口」。选对方向比努力更重要，顺势而为不是投机，而是看清时代的脉搏。</div>
+          </div>
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=300&fit=crop&auto=format&q=80" alt="" class="lazy-img" loading="lazy">
+          </div>
+        </div>
+        <div class="article-item reveal" onclick="handleCardClick(event, 'article-5.html')">
+          <div>
+            <div class="article-meta">
+              <span class="article-date">2026.03.01</span>
+              <span class="article-tag">生活</span>
+            </div>
+            <div class="article-title">雷军：永远相信美好的事情即将发生</div>
+            <div class="article-excerpt">这是小米的品牌理念，也是雷军的人生信条。他说「悲观者往往正确，但乐观者往往成功」。因为只有相信美好的事情会发生，你才会去做那些看起来不可能的事。</div>
+          </div>
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&h=300&fit=crop&auto=format&q=80" alt="" class="lazy-img" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section-quote reveal">
+    <blockquote>「永远相信美好的事情<br>即将发生。」</blockquote>
+    <cite>— 雷军</cite>
+  </section>
+
+  <!-- Categories -->
+  <section class="section-categories" id="categories">
+    <div class="container">
+      <h2 class="reveal">探索分类</h2>
+      <div class="categories-grid">
+        <div class="category-card reveal reveal-delay-1">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>技术</h3>
+          <p>前端、后端、架构、编程语言的深度实践与思考</p>
+          <div class="category-count">1 篇文章</div>
+        </div>
+        <div class="category-card reveal reveal-delay-2">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <h3>设计</h3>
+          <p>UI/UX、视觉设计、动效与产品设计方法论</p>
+          <div class="category-count">1 篇文章</div>
+        </div>
+        <div class="category-card reveal reveal-delay-3">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <h3>AI</h3>
+          <p>大模型、机器学习、AI 工具与未来趋势</p>
+          <div class="category-count">1 篇文章</div>
+        </div>
+        <div class="category-card reveal reveal-delay-1">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>工具</h3>
+          <p>开发工具、效率软件、工作流优化与推荐</p>
+          <div class="category-count">1 篇文章</div>
+        </div>
+        <div class="category-card reveal reveal-delay-2">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <h3>阅读</h3>
+          <p>书评、读书笔记与知识管理方法</p>
+          <div class="category-count">1 篇文章</div>
+        </div>
+        <div class="category-card reveal reveal-delay-3">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>生活</h3>
+          <p>旅行、摄影、美食与生活的诗意片段</p>
+          <div class="category-count">3 篇文章</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section-newsletter" id="subscribe">
+    <div class="inner reveal">
+      <h2>不错过任何一篇</h2>
+      <p>订阅邮件通讯，每周精选内容直达收件箱。</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="your@email.com" required id="newsletterInput">
+        <button type="submit" id="newsletterBtn">订阅</button>
+      </form>
+      <div class="newsletter-hint" id="newsletterHint" style="display:none;">每周五发送，随时可退订</div>
+      <div class="rss-link">
+        <svg viewBox="0 0 24 24"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
+        <a href="javascript:void(0)" style="opacity:0.4;cursor:not-allowed;pointer-events:none;color:inherit;">RSS 订阅</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>博客</h4>
+        <a href="#articles">最新文章</a>
+        <a href="#featured">精选合集</a>
+        <a href="#articles">归档</a>
+      </div>
+      <div class="footer-col">
+        <h4>分类</h4>
+        <a href="#categories">技术</a>
+        <a href="#categories">设计</a>
+        <a href="#categories">AI</a>
+        <a href="#categories">生活</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="javascript:void(0)" class="disabled-link">关于我</a>
+        <a href="javascript:void(0)" class="disabled-link">联系方式</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+      </div>
+      <div class="footer-col">
+        <h4>更多</h4>
+        <a href="javascript:void(0)" class="disabled-link">使用说明</a>
+        <a href="javascript:void(0)" class="disabled-link">隐私政策</a>
+        <a href="javascript:void(0)" class="disabled-link">Sitemap</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © <script>document.write(new Date().getFullYear())</script> MiracleBlog. All rights reserved.</span>
+      <span>
+        <a href="javascript:void(0)" class="disabled-link">隐私政策</a> · <a href="javascript:void(0)" class="disabled-link">使用条款</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+  </div>
+
+  <!-- 浮动心形按钮（书写浪漫） -->
+  <a href="romantic.html" class="float-love-btn" title="书写浪漫">
+    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+  </a>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- 登录模态框 -->
+  <div class="auth-overlay" id="loginModal" onclick="closeLoginModal(event)" role="dialog" aria-modal="true">
+    <div class="auth-card" onclick="event.stopPropagation()">
+      <button class="auth-card-close" onclick="closeLoginModal()" aria-label="关闭">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg>
+      </button>
+      <h2>欢迎回来</h2>
+      <div class="auth-subtitle">登录你的 MiracleBlog 账号</div>
+      
+      <div class="auth-error-bar" id="loginErrorBar">邮箱或密码错误</div>
+      
+      <div class="auth-field">
+        <label for="loginEmail">邮箱地址</label>
+        <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email">
+        <div class="field-error" id="loginEmailError"></div>
+      </div>
+      
+      <div class="auth-field">
+        <label for="loginPassword">密码</label>
+        <div class="auth-field-wrap">
+          <input type="password" id="loginPassword" placeholder="输入密码" autocomplete="current-password">
+          <button class="auth-pw-toggle" type="button" onclick="togglePasswordVisibility('loginPassword', this)" aria-label="切换密码可见性">
+            <svg class="eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <div class="field-error" id="loginPasswordError"></div>
+      </div>
+      
+      <div class="auth-row">
+        <label class="auth-checkbox">
+          <input type="checkbox" id="rememberMe">
+          <span>记住我</span>
+        </label>
+        <a href="javascript:void(0)" class="auth-link">忘记密码？</a>
+      </div>
+      
+      <button class="auth-submit" onclick="handleLogin()">登录</button>
+      
+      <div class="auth-divider">或</div>
+      <div class="auth-third-party">暂不支持第三方登录，请使用邮箱注册</div>
+      
+      <div class="auth-switch">
+        还没有账号？<a onclick="switchToRegister()">立即注册</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 注册模态框 -->
+  <div class="auth-overlay" id="registerModal" onclick="closeRegisterModal(event)" role="dialog" aria-modal="true">
+    <div class="auth-card" onclick="event.stopPropagation()">
+      <button class="auth-card-close" onclick="closeRegisterModal()" aria-label="关闭">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg>
+      </button>
+      <h2>创建账号</h2>
+      <div class="auth-subtitle">加入 MiracleBlog，开启你的探索之旅</div>
+      
+      <div class="auth-error-bar" id="registerErrorBar"></div>
+      
+      <div class="auth-field">
+        <label for="registerUsername">用户名</label>
+        <input type="text" id="registerUsername" placeholder="你的昵称" autocomplete="username">
+        <div class="field-error" id="registerUsernameError"></div>
+      </div>
+      
+      <div class="auth-field">
+        <label for="registerEmail">邮箱地址</label>
+        <input type="email" id="registerEmail" placeholder="your@email.com" autocomplete="email">
+        <div class="field-error" id="registerEmailError"></div>
+      </div>
+      
+      <div class="auth-field">
+        <label for="registerPassword">密码</label>
+        <div class="auth-field-wrap">
+          <input type="password" id="registerPassword" placeholder="至少 6 位字符" autocomplete="new-password">
+          <button class="auth-pw-toggle" type="button" onclick="togglePasswordVisibility('registerPassword', this)" aria-label="切换密码可见性">
+            <svg class="eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <div class="field-error" id="registerPasswordError"></div>
+      </div>
+      
+      <div class="auth-field">
+        <label for="registerConfirmPassword">确认密码</label>
+        <div class="auth-field-wrap">
+          <input type="password" id="registerConfirmPassword" placeholder="再次输入密码" autocomplete="new-password">
+          <button class="auth-pw-toggle" type="button" onclick="togglePasswordVisibility('registerConfirmPassword', this)" aria-label="切换密码可见性">
+            <svg class="eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <div class="field-error" id="registerConfirmPasswordError"></div>
+      </div>
+      
+      <div class="auth-field" style="margin-bottom: 20px;">
+        <label class="auth-checkbox">
+          <input type="checkbox" id="agreeTerms">
+          <span>我已阅读并同意《<a href="javascript:void(0)" class="auth-link" style="pointer-events:none;">使用条款</a>》和《<a href="javascript:void(0)" class="auth-link" style="pointer-events:none;">隐私政策</a>》</span>
+        </label>
+        <div class="field-error" id="agreeTermsError"></div>
+      </div>
+      
+      <button class="auth-submit" onclick="handleRegister()">注册</button>
+      
+      <div class="auth-switch">
+        已有账号？<a onclick="switchToLogin()">立即登录</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Modal -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()" style="position:relative;">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-tag" id="modalTag"></div>
+      <h2 id="modalTitle"></h2>
+      <div class="modal-date" id="modalDate"></div>
+      <div class="modal-body" id="modalBody">
+        <p>点击文章卡片阅读全文。</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Toast ──────────────────────────────────────
+    const toastEl = document.getElementById('toast');
+    let toastTimer = null;
+    function showToast(msg, duration) {
+      duration = duration || 3000;
+      toastEl.textContent = msg;
+      toastEl.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove('show'), duration);
+    }
+
+    // ── Auth Modal Functions ─────────────────────────
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+    const navAuth = document.getElementById('navAuth');
+    const navUser = document.getElementById('navUser');
+    const mobileAuth = document.getElementById('mobileAuth');
+    const mobileUser = document.getElementById('mobileUser');
+
+    function openLoginModal() {
+      resetLoginForm();
+      loginModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('loginEmail').focus();
+    }
+
+    function closeLoginModal(e) {
+      if (e && e.target !== loginModal && !e.target.classList.contains('auth-card-close')) return;
+      loginModal.classList.remove('active');
+      document.body.style.overflow = '';
+      resetLoginForm();
+    }
+
+    function openRegisterModal() {
+      resetRegisterForm();
+      registerModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('registerUsername').focus();
+    }
+
+    function closeRegisterModal(e) {
+      if (e && e.target !== registerModal && !e.target.classList.contains('auth-card-close')) return;
+      registerModal.classList.remove('active');
+      document.body.style.overflow = '';
+      resetRegisterForm();
+    }
+
+    function switchToRegister() {
+      closeLoginModal();
+      setTimeout(() => openRegisterModal(), 150);
+    }
+
+    function switchToLogin() {
+      closeRegisterModal();
+      setTimeout(() => openLoginModal(), 150);
+    }
+
+    function resetLoginForm() {
+      document.getElementById('loginEmail').value = '';
+      document.getElementById('loginPassword').value = '';
+      document.getElementById('rememberMe').checked = false;
+      clearFieldError('loginEmail');
+      clearFieldError('loginPassword');
+      document.getElementById('loginErrorBar').classList.remove('show');
+    }
+
+    function resetRegisterForm() {
+      document.getElementById('registerUsername').value = '';
+      document.getElementById('registerEmail').value = '';
+      document.getElementById('registerPassword').value = '';
+      document.getElementById('registerConfirmPassword').value = '';
+      document.getElementById('agreeTerms').checked = false;
+      clearFieldError('registerUsername');
+      clearFieldError('registerEmail');
+      clearFieldError('registerPassword');
+      clearFieldError('registerConfirmPassword');
+      clearFieldError('agreeTerms');
+      document.getElementById('registerErrorBar').classList.remove('show');
+    }
+
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const eyeOpen = btn.querySelector('.eye-open');
+      const eyeClosed = btn.querySelector('.eye-closed');
+      if (input.type === 'password') {
+        input.type = 'text';
+        eyeOpen.style.display = 'none';
+        eyeClosed.style.display = 'block';
+      } else {
+        input.type = 'password';
+        eyeOpen.style.display = 'block';
+        eyeClosed.style.display = 'none';
+      }
+    }
+
+    function showFieldError(fieldId, message) {
+      const field = document.getElementById(fieldId);
+      const errorEl = document.getElementById(fieldId + 'Error');
+      if (field) field.classList.add('error');
+      if (errorEl) {
+        errorEl.textContent = message;
+        errorEl.classList.add('show');
+      }
+    }
+
+    function clearFieldError(fieldId) {
+      const field = document.getElementById(fieldId);
+      const errorEl = document.getElementById(fieldId + 'Error');
+      if (field) field.classList.remove('error', 'success');
+      if (errorEl) {
+        errorEl.textContent = '';
+        errorEl.classList.remove('show');
+      }
+    }
+
+    function validateEmail(email) {
+      return email.includes('@') && email.includes('.');
+    }
+
+    function handleLogin() {
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      let hasError = false;
+
+      clearFieldError('loginEmail');
+      clearFieldError('loginPassword');
+      document.getElementById('loginErrorBar').classList.remove('show');
+
+      if (!email) {
+        showFieldError('loginEmail', '请输入邮箱地址');
+        hasError = true;
+      } else if (!validateEmail(email)) {
+        showFieldError('loginEmail', '请输入有效的邮箱地址');
+        hasError = true;
+      }
+
+      if (!password) {
+        showFieldError('loginPassword', '请输入密码');
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      const users = JSON.parse(localStorage.getItem('miracleblog_users') || '[]');
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        localStorage.setItem('miracleblog_current_user', JSON.stringify(user));
+        closeLoginModal();
+        updateNavForLoggedInUser(user);
+        showToast('登录成功，欢迎回来');
+      } else {
+        const errorBar = document.getElementById('loginErrorBar');
+        errorBar.textContent = '邮箱或密码错误';
+        errorBar.classList.add('show');
+        setTimeout(() => errorBar.classList.remove('show'), 3000);
+      }
+    }
+
+    function handleRegister() {
+      const username = document.getElementById('registerUsername').value.trim();
+      const email = document.getElementById('registerEmail').value.trim();
+      const password = document.getElementById('registerPassword').value;
+      const confirmPassword = document.getElementById('registerConfirmPassword').value;
+      const agreeTerms = document.getElementById('agreeTerms').checked;
+      let hasError = false;
+
+      clearFieldError('registerUsername');
+      clearFieldError('registerEmail');
+      clearFieldError('registerPassword');
+      clearFieldError('registerConfirmPassword');
+      clearFieldError('agreeTerms');
+      document.getElementById('registerErrorBar').classList.remove('show');
+
+      if (!username) {
+        showFieldError('registerUsername', '请输入用户名');
+        hasError = true;
+      } else if (username.length < 2) {
+        showFieldError('registerUsername', '用户名至少 2 个字符');
+        hasError = true;
+      }
+
+      if (!email) {
+        showFieldError('registerEmail', '请输入邮箱地址');
+        hasError = true;
+      } else if (!validateEmail(email)) {
+        showFieldError('registerEmail', '请输入有效的邮箱地址');
+        hasError = true;
+      }
+
+      if (!password) {
+        showFieldError('registerPassword', '请输入密码');
+        hasError = true;
+      } else if (password.length < 6) {
+        showFieldError('registerPassword', '密码至少 6 位字符');
+        hasError = true;
+      }
+
+      if (!confirmPassword) {
+        showFieldError('registerConfirmPassword', '请确认密码');
+        hasError = true;
+      } else if (confirmPassword !== password) {
+        showFieldError('registerConfirmPassword', '两次输入的密码不一致');
+        hasError = true;
+      } else {
+        document.getElementById('registerConfirmPassword').classList.add('success');
+      }
+
+      if (!agreeTerms) {
+        showFieldError('agreeTerms', '请先同意服务条款');
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      const users = JSON.parse(localStorage.getItem('miracleblog_users') || '[]');
+      const existingUser = users.find(u => u.email === email);
+
+      if (existingUser) {
+        const errorBar = document.getElementById('registerErrorBar');
+        errorBar.textContent = '该邮箱已被注册';
+        errorBar.classList.add('show');
+        setTimeout(() => errorBar.classList.remove('show'), 3000);
+        return;
+      }
+
+      const newUser = { username, email, password };
+      users.push(newUser);
+      localStorage.setItem('miracleblog_users', JSON.stringify(users));
+      localStorage.setItem('miracleblog_current_user', JSON.stringify(newUser));
+      closeRegisterModal();
+      updateNavForLoggedInUser(newUser);
+      showToast('注册成功，欢迎加入');
+    }
+
+    function updateNavForLoggedInUser(user) {
+      const initial = user.username.charAt(0).toUpperCase();
+      
+      // Desktop
+      if (navAuth) navAuth.style.display = 'none';
+      if (navUser) {
+        navUser.style.display = 'flex';
+        document.getElementById('userAvatar').textContent = initial;
+        document.getElementById('userName').textContent = user.username;
+        document.getElementById('ddEmail').textContent = user.email;
+      }
+      
+      // Mobile
+      if (mobileAuth) mobileAuth.style.display = 'none';
+      if (mobileUser) {
+        mobileUser.style.display = 'block';
+        document.getElementById('mobileUserAvatar').textContent = initial;
+        document.getElementById('mobileUserName').textContent = user.username;
+        document.getElementById('mobileUserEmail').textContent = user.email;
+      }
+    }
+
+    function updateNavForLoggedOutUser() {
+      // Desktop
+      if (navAuth) navAuth.style.display = 'flex';
+      if (navUser) navUser.style.display = 'none';
+      
+      // Mobile
+      if (mobileAuth) mobileAuth.style.display = 'flex';
+      if (mobileUser) mobileUser.style.display = 'none';
+    }
+
+    function toggleUserDropdown(e) {
+      e.stopPropagation();
+      const dropdown = document.getElementById('userDropdown');
+      dropdown.classList.toggle('open');
+    }
+
+    function closeUserDropdown() {
+      const dropdown = document.getElementById('userDropdown');
+      if (dropdown) dropdown.classList.remove('open');
+    }
+
+    function logout() {
+      localStorage.removeItem('miracleblog_current_user');
+      closeUserDropdown();
+      updateNavForLoggedOutUser();
+      showToast('已退出登录');
+    }
+
+    // Click outside to close dropdown
+    document.addEventListener('click', function(e) {
+      const dropdown = document.getElementById('userDropdown');
+      const navUserEl = document.getElementById('navUser');
+      if (dropdown && navUserEl && !navUserEl.contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
+
+    // ESC key to close modals
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (loginModal && loginModal.classList.contains('active')) closeLoginModal();
+        if (registerModal && registerModal.classList.contains('active')) closeRegisterModal();
+      }
+    });
+
+    // Check login state on page load
+    function checkAuthState() {
+      const currentUser = JSON.parse(localStorage.getItem('miracleblog_current_user') || 'null');
+      if (currentUser) {
+        updateNavForLoggedInUser(currentUser);
+      }
+    }
+
+    // ── Mobile Menu ────────────────────────────────
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (mobileMenu && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    function closeMobileMenu() {
+      if (mobileMenu) mobileMenu.classList.remove('open');
+    }
+
+    // Initialize auth state
+    checkAuthState();
+
+    // ── 卡片点击处理（toast + preventDefault）─────
+    function handleCardClick(e, href) {
+      e.preventDefault();
+      e.stopPropagation();
+      showToast('文章详情页开发中，敬请期待 ✍️');
+    }
+
+    // ── iPhone Timer ─────────────────────────────
+    (function() {
+      const strips = {};
+      document.querySelectorAll('.timer-digit-strip').forEach(strip => {
+        const key = strip.dataset.digit;
+        strip.innerHTML = '';
+        for (let i = 0; i <= 9; i++) {
+          const d = document.createElement('div');
+          d.className = 'digit';
+          d.textContent = i;
+          strip.appendChild(d);
+        }
+        strips[key] = { el: strip, current: -1 };
+      });
+
+      function updateTimer() {
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const s = now.getSeconds();
+        const vals = {
+          h1: Math.floor(h / 10), h2: h % 10,
+          m1: Math.floor(m / 10), m2: m % 10,
+          s1: Math.floor(s / 10), s2: s % 10
+        };
+        for (const [key, val] of Object.entries(vals)) {
+          if (strips[key].current !== val) {
+            strips[key].current = val;
+            const h = strips[key].el.querySelector('.digit').offsetHeight || 70;
+            strips[key].el.style.transform = `translateY(${-val * h}px)`;
+          }
+        }
+      }
+
+      requestAnimationFrame(updateTimer);
+      setInterval(updateTimer, 1000);
+      const resizeObs = new ResizeObserver(() => updateTimer());
+      document.querySelectorAll('.timer-digit-container').forEach(c => resizeObs.observe(c));
+    })();
+
+    // ── Scroll reveal ────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Lazy image loading ───────────────────────
+    const imgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.onload = () => img.classList.add('loaded');
+          if (img.complete) img.classList.add('loaded');
+          imgObserver.unobserve(img);
+        }
+      });
+    }, { rootMargin: '300px' });
+    document.querySelectorAll('.lazy-img').forEach(img => imgObserver.observe(img));
+
+    // ── Nav scroll state ─────────────────────────
+    const nav = document.getElementById('nav');
+    const hero = document.querySelector('.hero');
+    const progressBar = document.getElementById('progressBar');
+    const backToTop = document.getElementById('backToTop');
+
+    function updateNav() {
+      const scrollY = window.scrollY;
+      const heroH = hero.offsetHeight;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      nav.classList.remove('dark');
+      nav.classList.add('scrolled');
+
+      progressBar.style.width = (scrollY / docHeight * 100) + '%';
+      backToTop.classList.toggle('visible', scrollY > heroH * 0.5);
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    // ── Active nav link ──────────────────────────
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
+    sections.forEach(s => sectionObserver.observe(s));
+
+    // ── Hero parallax fade ───────────────────────
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const heroH = hero.offsetHeight;
+      if (scrollY < heroH) {
+        const progress = scrollY / heroH;
+        hero.style.opacity = 1 - progress * 0.6;
+        hero.querySelector('h1').style.transform = `translateY(${scrollY * 0.2}px)`;
+      }
+    }, { passive: true });
+
+    // ── Image error fallback ─────────────────────
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function() {
+        this.style.background = 'linear-gradient(135deg, #e8e0d8 0%, #d4ccc4 100%)';
+        this.style.minHeight = '120px';
+      });
+    });
+
+    // ── Article Modal ────────────────────────────
+    const modal = document.getElementById('modalOverlay');
+
+    function openModal(e, title, tag, date, content) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalTag').textContent = tag;
+      document.getElementById('modalDate').textContent = date || '';
+      if (content) {
+        document.getElementById('modalBody').innerHTML = content;
+      }
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e && e.target !== modal && !e.target.classList.contains('modal-close')) return;
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+
+    // ── Featured rail drag to scroll ─────────────
+    const rail = document.querySelector('.featured-rail');
+    if (rail) {
+      let isDown = false, startX, scrollLeft;
+      rail.addEventListener('mousedown', e => {
+        isDown = true;
+        rail.style.cursor = 'grabbing';
+        startX = e.pageX - rail.offsetLeft;
+        scrollLeft = rail.scrollLeft;
+      });
+      rail.addEventListener('mouseleave', () => { isDown = false; rail.style.cursor = ''; });
+      rail.addEventListener('mouseup', () => { isDown = false; rail.style.cursor = ''; });
+      rail.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - rail.offsetLeft;
+        rail.scrollLeft = scrollLeft - (x - startX) * 1.5;
+      });
+    }
+
+    // ── 搜索功能 ─────────────────────────────────
+    const searchToggle = document.getElementById('searchToggle');
+    const searchWrap = document.getElementById('searchWrap');
+    const searchInput = document.getElementById('searchInput');
+    const articleItems = document.querySelectorAll('.article-item');
+
+    searchToggle.addEventListener('click', () => {
+      const isOpen = searchWrap.classList.toggle('open');
+      if (isOpen) {
+        setTimeout(() => searchInput.focus(), 300);
+      } else {
+        searchInput.value = '';
+        articleItems.forEach(item => item.style.display = '');
+      }
+    });
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      articleItems.forEach(item => {
+        const title = item.querySelector('.article-title').textContent.toLowerCase();
+        const excerpt = item.querySelector('.article-excerpt').textContent.toLowerCase();
+        if (!query || title.includes(query) || excerpt.includes(query)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+
+    // ── 订阅按钮 ─────────────────────────────────
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterInput = document.getElementById('newsletterInput');
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterHint = document.getElementById('newsletterHint');
+
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      newsletterInput.value = '';
+      newsletterBtn.textContent = '✓ 订阅成功';
+      newsletterBtn.style.background = '#30d158';
+      newsletterBtn.style.transform = 'scale(1.04)';
+      newsletterHint.style.display = 'block';
+      setTimeout(() => {
+        newsletterBtn.textContent = '订阅';
+        newsletterBtn.style.background = '';
+        newsletterBtn.style.transform = '';
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>
